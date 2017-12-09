@@ -1,1 +1,1 @@
-Aplikace umožní uživateli zobrazit předpověď počasí jak na aktuální den, tak i hodinovou předpověď následujících 7 dní. Bude možné ukládat si oblíbené polohy, určit polohu pomocí geolokace, ovládání gesty, uvítací zvukové stopy. Data budou získávána pomocí JSONu.
+Aplikace umožní uživateli zobrazit předpověď počasí jak na aktuální den, tak i hodinovou předpověď následujících 7 dní. Bude možné určit polohu pomocí geolokace, ovládání gesty, uvítací zvukové stopy. Data budou získávána pomocí JSONu.
