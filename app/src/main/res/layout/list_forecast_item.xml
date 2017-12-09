@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:alpha="0.5"
+    android:background="#000">
+
+    <TextView
+        android:id="@+id/textDay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:text="den"
+        android:textColor="#FFF"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toStartOf="@+id/textDate"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageWeather"
+        android:layout_width="113dp"
+        android:layout_height="112dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textDay"
+        app:srcCompat="@drawable/ic_cloud_black_24dp" />
+
+    <TextView
+        android:id="@+id/textTemp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/_30"
+        android:textColor="#FFF"
+        android:textSize="42sp"
+        app:layout_constraintStart_toEndOf="@+id/imageWeather"
+        app:layout_constraintTop_toBottomOf="@+id/textDay" />
+
+    <TextView
+        android:id="@+id/textWind"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="40dp"
+        android:text="vitr"
+        android:textColor="#FFF"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toStartOf="@+id/textHumidity"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textSunSet" />
+
+    <TextView
+        android:id="@+id/textHumidity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="50dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="40dp"
+        android:text="@string/vlhkost"
+        android:textColor="#FFF"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/textWind"
+        app:layout_constraintTop_toBottomOf="@+id/textMoonSet" />
+
+    <TextView
+        android:id="@+id/textPrecip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="24dp"
+        android:text="srazky"
+        android:textColor="#FFF"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toStartOf="@+id/textUv"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textWind" />
+
+    <TextView
+        android:id="@+id/textUv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="50dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="24dp"
+        android:text="uv"
+        android:textColor="#FFF"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/textPrecip"
+        app:layout_constraintTop_toBottomOf="@+id/textHumidity" />
+
+    <TextView
+        android:id="@+id/textDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:text="popis"
+        android:textAlignment="center"
+        android:textColor="#FFF"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageWeather" />
+
+    <TextView
+        android:id="@+id/textDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:layout_marginTop="16dp"
+        android:text="TextView"
+        android:textColor="#FFF"
+        android:textSize="17sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/textDay"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textMaxTemp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="36dp"
+        android:text="max"
+        android:textColor="#FFF"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/textTemp"
+        app:layout_constraintTop_toBottomOf="@+id/textDate" />
+
+    <TextView
+        android:id="@+id/textMinTemp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="min"
+        android:textColor="#FFF"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/textTemp"
+        app:layout_constraintTop_toBottomOf="@+id/textMaxTemp" />
+
+    <TextView
+        android:id="@+id/textVis"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="24dp"
+        android:text="viditelnost"
+        android:textColor="#FFF"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textPrecip" />
+
+    <ImageView
+        android:id="@+id/imageMoonRise"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="24dp"
+        android:adjustViewBounds="true"
+        android:scaleType="fitXY"
+        android:src="@drawable/moonrise"
+        app:layout_constraintEnd_toStartOf="@+id/textMoonRise"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/textSunRise"
+        app:layout_constraintTop_toBottomOf="@+id/textDescription"/>
+
+
+    <ImageView
+        android:id="@+id/imageMoonSet"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintEnd_toStartOf="@+id/textMoonSet"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/textSunSet"
+        app:layout_constraintTop_toBottomOf="@+id/imageMoonRise"
+        app:srcCompat="@drawable/moonset" />
+
+    <ImageView
+        android:id="@+id/imageSunRise"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintEnd_toStartOf="@+id/textSunRise"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textDescription"
+        app:srcCompat="@drawable/sunrise" />
+
+    <ImageView
+        android:id="@+id/imageSunSet"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="12dp"
+        android:adjustViewBounds="true"
+        app:layout_constraintEnd_toStartOf="@+id/textSunSet"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageSunRise"
+        app:srcCompat="@drawable/sunset" />
+
+    <TextView
+        android:id="@+id/textSunRise"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
+        android:text="Vychod S"
+        android:textColor="#FFF"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toStartOf="@+id/imageMoonRise"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/imageSunRise"
+        app:layout_constraintTop_toBottomOf="@+id/textDescription"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/textSunSet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:text="Zapad S"
+        android:textColor="#FFF"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toStartOf="@+id/imageMoonSet"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/imageSunSet"
+        app:layout_constraintTop_toBottomOf="@+id/textSunRise" />
+
+    <TextView
+        android:id="@+id/textMoonRise"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
+        android:text="Vychod m"
+        android:textColor="#FFF"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/imageMoonRise"
+        app:layout_constraintTop_toBottomOf="@+id/textDescription"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/textMoonSet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:text="zapad m"
+        android:textColor="#FFF"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/imageMoonSet"
+        app:layout_constraintTop_toBottomOf="@+id/textMoonRise" />
+
+</android.support.constraint.ConstraintLayout>
