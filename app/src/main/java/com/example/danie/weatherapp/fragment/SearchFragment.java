@@ -18,6 +18,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.example.danie.weatherapp.MainActivity;
 import com.example.danie.weatherapp.R;
 
 
@@ -43,7 +44,7 @@ public class SearchFragment extends Fragment {
             public void onClick(View view) {
                 //=================
                 //nahrani JSONU
-                //((MainActivity) getActivity()).getNewWeather(editText.getText().toString());
+                //((MainActivity) getActivity()).getNewWeather(String.valueOf(editText.getText()), ((MainActivity) getActivity()).getCountForecastDay());
                 //=================
             }
         });

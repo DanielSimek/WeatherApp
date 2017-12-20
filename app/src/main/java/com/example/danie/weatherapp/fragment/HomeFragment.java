@@ -24,6 +24,7 @@ public class HomeFragment extends Fragment {
     public HomeFragment() {
         // Required empty public construthctor
     }
+
     @SuppressLint("ValidFragment")
     public HomeFragment(Weather weather) {
         // Required empty public construthctor
@@ -41,19 +42,19 @@ public class HomeFragment extends Fragment {
 
         View v = inflater.inflate(R.layout.fragment_home, container, false);
 
-        city = (TextView)v.findViewById(R.id.textCity);
-        region = (TextView)v.findViewById(R.id.textRegion);
-        countruy = (TextView)v.findViewById(R.id.textCountry);
-        temp = (TextView)v.findViewById(R.id.textTemp);
-        description = (TextView)v.findViewById(R.id.textDescription);
-        date = (TextView)v.findViewById(R.id.textUpdateDate);
-        wind = (TextView)v.findViewById(R.id.textWind);
-        pressure = (TextView)v.findViewById(R.id.textPressure);
-        precip = (TextView)v.findViewById(R.id.textPrecip);
-        humidity = (TextView)v.findViewById(R.id.textHumidity);
-        feelslike = (TextView)v.findViewById(R.id.textFeelsLike);
-        vis = (TextView)v.findViewById(R.id.textVis);
-        icon = (ImageView)v.findViewById(R.id.imageView);
+        city = (TextView) v.findViewById(R.id.textCity);
+        region = (TextView) v.findViewById(R.id.textRegion);
+        countruy = (TextView) v.findViewById(R.id.textCountry);
+        temp = (TextView) v.findViewById(R.id.textTemp);
+        description = (TextView) v.findViewById(R.id.textDescription);
+        date = (TextView) v.findViewById(R.id.textUpdateDate);
+        wind = (TextView) v.findViewById(R.id.textWind);
+        pressure = (TextView) v.findViewById(R.id.textPressure);
+        precip = (TextView) v.findViewById(R.id.textPrecip);
+        humidity = (TextView) v.findViewById(R.id.textHumidity);
+        feelslike = (TextView) v.findViewById(R.id.textFeelsLike);
+        vis = (TextView) v.findViewById(R.id.textVis);
+        icon = (ImageView) v.findViewById(R.id.imageView);
 
         loadImageFromUrl("http:" + weather.current.condition.icon);
 
@@ -72,7 +73,7 @@ public class HomeFragment extends Fragment {
 
 
         final MediaPlayer mp = MediaPlayer.create(this.getContext(), R.raw.youknow);
-        button = (ImageButton)v.findViewById(R.id.imageReload);
+        button = (ImageButton) v.findViewById(R.id.imageReload);
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
 
@@ -85,12 +86,11 @@ public class HomeFragment extends Fragment {
         });
 
 
-
         // Inflate the layout for this fragment
         return v;
     }
 
-    public void loadImageFromUrl(String url){
+    public void loadImageFromUrl(String url) {
         Picasso.with(getContext())
                 .load(url)
                 .fit().centerInside()
