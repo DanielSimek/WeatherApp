@@ -62,7 +62,7 @@ public class HomeFragment extends Fragment {
         city.setText(weather.location.city);
         region.setText(weather.location.region);
         countruy.setText(weather.location.country);
-        temp.setText(weather.current.temp_c + " °C");
+        temp.setText(weather.current.temp_c + "°C");
         description.setText(weather.current.condition.text);
         date.setText(weather.current.last_updated);
         wind.setText("Vítr: " + String.valueOf(weather.current.wind_kph + "km/h"));
