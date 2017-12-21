@@ -12,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.danie.weatherapp.Item.Weather;
+import com.example.danie.weatherapp.MainActivity;
 import com.example.danie.weatherapp.R;
 import com.squareup.picasso.Picasso;
 
@@ -78,7 +79,7 @@ public class HomeFragment extends Fragment {
             public void onClick(View view) {
 
                 //=================
-                //((MainActivity) getActivity()).refresh();
+                ((MainActivity) getActivity()).refresh();
                 //=================
                 //sound
                 mp.start();

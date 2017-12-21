@@ -44,7 +44,7 @@ public class SettingsFragment extends Fragment {
                 //=================
                 //ulozeni nastaveni
 
-                //((MainActivity) getActivity()).setCountForecastDay(seekBar.getProgress()+1);
+                ((MainActivity) getActivity()).setCountForecastDay(seekBar.getProgress()+1);
 
                 //=================
             }

@@ -1,7 +1,10 @@
 package com.example.danie.weatherapp;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.location.Location;
+import android.location.LocationManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -11,6 +14,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -20,18 +24,20 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.danie.weatherapp.Interface.OnPermissionRequest;
 import com.example.danie.weatherapp.Item.Weather;
 import com.example.danie.weatherapp.fragment.ForecastFragment;
 import com.example.danie.weatherapp.fragment.HomeFragment;
 import com.example.danie.weatherapp.fragment.HourFragment;
 import com.example.danie.weatherapp.fragment.SearchFragment;
 import com.example.danie.weatherapp.fragment.SettingsFragment;
+import com.example.danie.weatherapp.manager.PermissionManager;
 
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements NavigationView.OnNavigationItemSelectedListener, OnPermissionRequest {
+
 
     private static final String API_WEATHER_KEY = "9d9a384eeb464f2ca39123411172404";
-
     //============
     //============
     //============
@@ -43,12 +49,17 @@ public class MainActivity extends AppCompatActivity
     //============
     //============
     //============
+    public PermissionManager permissionManager = new PermissionManager(this);
+
+
 
     Weather weather;
     String weatherString;
     int countForecastDay;
     SharedPreferences mySharedPref;
     SharedPreferences.Editor mySharedEditor;
+    public double longitude;
+    public double latitude;
 
     public Weather getThisWeather() {
         return weather;
@@ -62,6 +73,7 @@ public class MainActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         //Shared preferences
         mySharedPref = getSharedPreferences("myPref", Context.MODE_PRIVATE);
         weatherString = mySharedPref.getString("weatherString", getString(R.string.data));
@@ -224,6 +236,28 @@ public class MainActivity extends AppCompatActivity
 
     public int getCountForecastDay() {
         return countForecastDay;
+    }
+    //==============================================================================================
+
+    //==============================================================================================
+    //Geolocation
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String permissions[], @NonNull int[] grantResults) {
+        permissionManager.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        ;
+    }
+
+    @Override
+    public void onPermissionAccepted() {
+        LocationManager lm = (LocationManager)getSystemService(Context.LOCATION_SERVICE);
+        @SuppressLint("MissingPermission") Location location = lm.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+        this.longitude = location.getLongitude();
+        this.latitude = location.getLatitude();
+        getNewWeather(String.valueOf(this.latitude) + "," + String.valueOf(this.longitude), this.countForecastDay);
+    }
+
+    @Override
+    public void OnPermissionDeclined() {
     }
     //==============================================================================================
 
